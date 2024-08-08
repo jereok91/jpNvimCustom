@@ -39,7 +39,7 @@ rm -rf ~/.local/share/nvim
 Then, clone this repo
 
 ```
-git clone https://github.com/FStanDev/myNvChadConfig.git ~/.config/nvim && nvim
+git clone https://github.com/jereok91/jpNvimCustom.git ~/.config/nvim && nvim
 ```
 
 ### On Windows:
