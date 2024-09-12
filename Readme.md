@@ -24,6 +24,8 @@ Nvim [0.9.5](https://github.com/neovim/neovim/releases/tag/v0.9.5)
 
 [Node](https://nodejs.org/en/download) min version 18. This is for some lsp languages
 
+install [LazyGit](https://github.com/jesseduffield/lazygit) 
+
 ## Installation
 
 ### On Mac/Linux:
