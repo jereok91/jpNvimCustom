@@ -18,6 +18,9 @@ vim.keymap.set("n", "<leader>dp", function()
 end)
 vim.keymap.set("n", "<leader>o", "o<Esc>k")
 vim.keymap.set("n", "<leader>x", vim.cmd.bdelete)
+
 --vim.o.timeoutlen=200
 -- Lazy requirement
 require("base.plugins.lazy")
+require("oil").setup()
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
