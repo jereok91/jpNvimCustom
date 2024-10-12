@@ -10,6 +10,8 @@ return {
 		"black",
 		"isort",
 		"typescript-language-server",
+		"java-language-server",
+		"jdtls",
 		"svelte-language-server",
 		"codelldb",
 		"debugpy",
