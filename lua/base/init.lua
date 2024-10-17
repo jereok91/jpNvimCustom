@@ -19,7 +19,8 @@ end)
 vim.keymap.set("n", "<leader>o", "o<Esc>k")
 vim.keymap.set("n", "<leader>x", vim.cmd.bdelete)
 
---vim.o.timeoutlen=200
+vim.o.timeoutlen=2000
+vim.opt.clipboard="unnamedplus"
 -- Lazy requirement
 require("base.plugins.lazy")
 require("configs.oilConfig")
