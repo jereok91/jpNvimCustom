@@ -345,8 +345,8 @@ return {
 			}
 		end,
 		keys = {
-			{ "<c-s>", "<CR>", ft = "copilot-chat", desc = "Submit Prompt", remap = true },
-			{ "<leader>a", "", desc = "+ai", mode = { "n", "v" } },
+			{ "<c-s>",     "<CR>", ft = "copilot-chat", desc = "Submit Prompt", remap = true },
+			{ "<leader>a", "",     desc = "+ai",        mode = { "n", "v" } },
 			{
 				"<leader>aa",
 				function()
@@ -394,4 +394,31 @@ return {
 			chat.setup(opts)
 		end,
 	},
+	{
+		"JavaHello/spring-boot.nvim",
+		ft = "java",
+		dependencies = {
+			"mfussenegger/nvim-jdtls", -- or nvim-java, nvim-lspconfig
+			"ibhagwan/fzf-lua", -- 可选
+		},
+	},
+	{
+		"elmcgill/springboot-nvim",
+		depedencies = {
+			"neovim/nvim-lspconfig",
+			"mfussenegger/nvim-jdtls",
+			"nvim-tree/nvim-tree.lua",
+		},
+		config = function()
+			local springboot_nvim = require("springboot-nvim")
+			vim.keymap.set('n', '<leader>Jr', springboot_nvim.boot_run, { desc = "Spring Boot Run Project" })
+			vim.keymap.set('n', '<leader>Jc', springboot_nvim.generate_class, { desc = "Java Create Class" })
+			vim.keymap.set('n', '<leader>Ji', springboot_nvim.generate_interface,
+				{ desc = "Java Create Interface" })
+			vim.keymap.set('n', '<leader>Je', springboot_nvim.generate_enum, { desc = "Java Create Enum" })
+
+			springboot_nvim.setup({})
+		end
+	}
+
 }
