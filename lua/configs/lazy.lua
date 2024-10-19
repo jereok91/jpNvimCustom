@@ -394,31 +394,77 @@ return {
 			chat.setup(opts)
 		end,
 	},
+	-- {
+	-- 	"JavaHello/spring-boot.nvim",
+	-- 	ft = "java",
+	-- 	dependencies = {
+	-- 		"mfussenegger/nvim-jdtls", -- or nvim-java, nvim-lspconfig
+	-- 		"ibhagwan/fzf-lua", -- 可选
+	-- 	},
+	-- },
+	-- {
+	-- 	"elmcgill/springboot-nvim",
+	-- 	depedencies = {
+	-- 		"neovim/nvim-lspconfig",
+	-- 		"mfussenegger/nvim-jdtls",
+	-- 		"nvim-tree/nvim-tree.lua",
+	-- 	},
+	-- 	config = function()
+	-- 		local springboot_nvim = require("springboot-nvim")
+	-- 		vim.keymap.set('n', '<leader>Jr', springboot_nvim.boot_run, { desc = "Spring Boot Run Project" })
+	-- 		vim.keymap.set('n', '<leader>Jc', springboot_nvim.generate_class, { desc = "Java Create Class" })
+	-- 		vim.keymap.set('n', '<leader>Ji', springboot_nvim.generate_interface,
+	-- 			{ desc = "Java Create Interface" })
+	-- 		vim.keymap.set('n', '<leader>Je', springboot_nvim.generate_enum, { desc = "Java Create Enum" })
+	--
+	-- 		springboot_nvim.setup({})
+	-- 	end
+	-- },
 	{
-		"JavaHello/spring-boot.nvim",
-		ft = "java",
+		"nvim-java/nvim-java",
+		tag = "v2.0.1",
+		-- depedencies = {
+		-- 	{"eclipse-jdtls/eclipse.jdt.ls", tag = "v1.38.0"},
+		-- },
+		-- config = function()
+		-- 	require('java').setup()
+		-- end,
 		dependencies = {
-			"mfussenegger/nvim-jdtls", -- or nvim-java, nvim-lspconfig
-			"ibhagwan/fzf-lua", -- 可选
-		},
-	},
-	{
-		"elmcgill/springboot-nvim",
-		depedencies = {
+			"nvim-java/lua-async-await",
+			"nvim-java/nvim-java-refactor",
+			"nvim-java/nvim-java-core",
+			"nvim-java/nvim-java-test",
+			"nvim-java/nvim-java-dap",
+			"MunifTanjim/nui.nvim",
 			"neovim/nvim-lspconfig",
-			"mfussenegger/nvim-jdtls",
-			"nvim-tree/nvim-tree.lua",
+			"mfussenegger/nvim-dap",
+			{
+				"williamboman/mason.nvim",
+				opts = {
+					registries = {
+						"github:nvim-java/mason-registry",
+						"github:mason-org/mason-registry",
+					},
+				},
+			},
+			-- {
+			-- 	"williamboman/mason-lspconfig.nvim",
+			-- 	opts = {
+			-- 		handlers = {
+			-- 			["jdtls"] = function()
+			-- 				require("java").setup()
+			-- 				require("lspconfig").jdtls.setup()
+			-- 			end,
+			-- 		},
+			-- 	},
+			-- },
 		},
-		config = function()
-			local springboot_nvim = require("springboot-nvim")
-			vim.keymap.set('n', '<leader>Jr', springboot_nvim.boot_run, { desc = "Spring Boot Run Project" })
-			vim.keymap.set('n', '<leader>Jc', springboot_nvim.generate_class, { desc = "Java Create Class" })
-			vim.keymap.set('n', '<leader>Ji', springboot_nvim.generate_interface,
-				{ desc = "Java Create Interface" })
-			vim.keymap.set('n', '<leader>Je', springboot_nvim.generate_enum, { desc = "Java Create Enum" })
+		opts = function()
+			return require("configs.nvim-java")
+		end,
 
-			springboot_nvim.setup({})
-		end
-	}
+
+
+	},
 
 }

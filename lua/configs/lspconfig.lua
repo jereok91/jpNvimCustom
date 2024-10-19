@@ -1,3 +1,4 @@
+require('java').setup()
 local lspconfig = require("lspconfig")
 
 -- Global mappings.
@@ -37,17 +38,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		end, opts)
 	end,
 })
-
-require('spring_boot').init_lsp_commands()
+-- require('spring_boot').init_lsp_commands()
 lspconfig.pyright.setup({})
 lspconfig.lua_ls.setup({})
 lspconfig.rust_analyzer.setup({})
-lspconfig.jdtls.setup({
-	cmd = { 'jdtls' },
-	init_options = {
-		bundles = require("spring_boot").java_extensions(),
-	},
-})
+lspconfig.jdtls.setup({})
 lspconfig.ts_ls.setup({})
 lspconfig.svelte.setup({})
 lspconfig.zls.setup({})

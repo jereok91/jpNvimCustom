@@ -26,25 +26,25 @@ require("base.plugins.lazy")
 require("configs.oilConfig")
 
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
-local jdtls_config = {
-	bundles = {}
-}
+-- local jdtls_config = {
+-- 	bundles = {}
+-- }
 
-require('spring_boot').setup({})
--- 添加 spring-boot jdtls 扩展 jar 包
-vim.g.spring_boot = {
-	jdt_extensions_path = nil, -- 默认使用 ~/.vscode/extensions/vmware.vscode-spring-boot-x.xx.x
-	jdt_extensions_jars = {
-		"io.projectreactor.reactor-core.jar",
-		"org.reactivestreams.reactive-streams.jar",
-		"jdt-ls-commons.jar",
-		"jdt-ls-extension.jar",
-	},
-}
-require('spring_boot').setup({
-	ls_path = nil, -- 默认使用 ~/.vscode/extensions/vmware.vscode-spring-boot-x.xx.x
-	jdtls_name = "jdtls",
-	log_file = nil,
-	java_cmd = nil,
-})
-vim.list_extend(jdtls_config.bundles, require("spring_boot").java_extensions())
+-- require('spring_boot').setup({})
+-- -- 添加 spring-boot jdtls 扩展 jar 包
+-- vim.g.spring_boot = {
+-- 	jdt_extensions_path = nil, -- 默认使用 ~/.vscode/extensions/vmware.vscode-spring-boot-x.xx.x
+-- 	jdt_extensions_jars = {
+-- 		"io.projectreactor.reactor-core.jar",
+-- 		"org.reactivestreams.reactive-streams.jar",
+-- 		"jdt-ls-commons.jar",
+-- 		"jdt-ls-extension.jar",
+-- 	},
+-- }
+-- require('spring_boot').setup({
+-- 	ls_path = nil, -- 默认使用 ~/.vscode/extensions/vmware.vscode-spring-boot-x.xx.x
+-- 	jdtls_name = "jdtls",
+-- 	log_file = nil,
+-- 	java_cmd = nil,
+-- })
+-- vim.list_extend(jdtls_config.bundles, require("spring_boot").java_extensions())
