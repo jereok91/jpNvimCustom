@@ -466,5 +466,34 @@ return {
 
 
 	},
+	{
+		"declancm/cinnamon.nvim",
+		version = "*", -- use latest release
+		opts = {
+			-- change default options here
+		},
+		config = function(_, opts)
+			require("cinnamon").setup({
+				keymaps = {
+					basic = true,
+					extra = true,
+				},
+				-- Only scroll the window
+				options = { mode = "window" },
+			})
+		end,
+	},
+	{
+		'gen740/SmoothCursor.nvim',
+		config = function()
+			require('smoothcursor').setup({
+				type = "matrix",
+				fancy = {
+					enable = true,
+				},
+
+			})
+		end
+	}
 
 }
