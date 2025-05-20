@@ -41,7 +41,7 @@ rm -rf ~/.local/share/nvim
 Then, clone this repo
 
 ```
-git clone https://github.com/jereok91/jpNvimCustom.git ~/.config/nvim && nvim
+git clone https://github.com/jereok91/nvichad-jp-custom.git ~/.config/nvim && nvim
 ```
 
 ### On Windows:
@@ -52,7 +52,7 @@ rm -Force ~\AppData\Local\nvim-data
 ```
 
 ```
-git clone https://github.com/FStanDev/myNvChadConfig.git $ENV:USERPROFILE\AppData\Local\nvim && nvim
+git clone https://github.com/jereok91/nvichad-jp-custom.git $ENV:USERPROFILE\AppData\Local\nvim && nvim
 ```
 
 Then, after all plugins installs, execute `:MasonInstallAll` and is done 😀
